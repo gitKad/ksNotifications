@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+        <style>
+          div#toastContainer {
+          background-color:#33ADAD; /*only for demo purpose*/
+          position:absolute;
+          top:0px;
+          right:0px;
+          width:320px;
+          max-height:100%;
+          overflow:hidden;
+      }
+      div.toast {
+          width:304px;
+          height:55px;
+          margin:0px 0px 10px;
+          padding: 5px 8px;
+          position:relative;
+          left:200px;
+      }
+      div.toast div.text {
+          display:inline-block;
+          position:relative;
+          margin:0px;
+          padding:0px;
+          overflow:hidden;
+          width:289px;
+          height:100%;
+      }
+      div.toast img+div.text {
+          position:absolute;
+          left: 73px;
+          width:216px;
+      }
+      div.toast img {
+          position:absolute;
+          top:0px;
+          left:0px;
+          display:inline-block;
+          margin:0px;
+          width:65px;
+          height:65px;
+      }
+      div#toastContainer div.toast div.close {
+          display:none;
+          position: absolute;
+          top:0px;
+          right:0px;
+          margin:5px 8px;
+          width : 15px;
+          height : 15px;
+          padding:0px;
+          z-index:3000;
+      }
+      
+      div#toastContainer div.toast div.close:before {
+          content:"x";
+          font-style:bold;
+      }
+      div#toastContainer div.toast:hover div.close {
+          display:block;
+      }
+      
+      div#toastContainer div.toast:last-of-type {
+          margin:0px;
+      }
+      
+      
+      
+      
+      
+      div#dialogContainer {
+          z-index:9500;
+          
+          position:absolute;
+          top:0px; right:0px; bottom:0px; left:0px;
+          background-color:black;
+          opacity: 0.5;
+      }
+      
+      div#dialogContainer div#dialog{
+          z-index:9501;
+          position:absolute;
+          top:0px; right:0px; bottom:0px; left:0px;
+          
+          margin:auto;
+          width:100vw;
+          height:25vh;
+          
+          background-color:blue;
+      }
+      
+      
+      
+      
+      
+      /* Following is for demo styling only */
+       body {
+          margin:0px;
+          color:white;
+          border-collapse:collapse;
+          Box-sizing: Border-box;
+      }
+      button {
+          width:80px;
+          height:40px;
+      }
+      div#toastContainer div.toast.style1 {
+          background-color: blue;
+          color:white;
+      }
+      div#toastContainer div.toast.style2 {
+          background-color: red;
+          color:white;
+      }
+      div#toastContainer div.toast.style3 {
+          background-color: yellow;
+          color:black;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="background-color:green;position:absolute;top:0px;height: 60px;width: 100vw;">header</header>
+    <div id="innerBody" style="background-color:teal; position:absolute; top:60px; bottom:30px; width: 100vw;">
+        <div id="controlRoom">
+            <button id="toast1">toast1</button>
+            <button id="toast2">toast2</button>
+            <button id="toast3">toast3</button>
+            <button id="toast4">toast4</button>
+            <br/>
+            <br/>
+            <button id="dialog1">dialog1</button>
+            <button id="prompt2">prompt2</button>
+            <br/>
+            <br/>
+            <button id="clear">reset</button>
+        </div>
+        <div id="toastContainer"></div>
+    </div>
+    <footer style="background-color:blue; position:absolute; bottom:0px; height:30px; width:100vw;">footer</footer>
+    
+
+    
+    <script>
+      $('button#toast1').on('click', function () {
+          buildToast('Toast#1 : plain and simple.');
+      });
+      
+      $('button#toast2').on('click', function () {
+          buildToast('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'style2');
+      });
+      
+      $('button#toast3').on('click', function () {
+          buildToast('toast #3 has an image', 'style3', 'none', 'http://target-down.com/wp-content/uploads/2014/08/1shuu4q3.wizardchan.test_.png');
+      });
+      
+      $('button#dialog1').on('click', function () {
+          buildDialog('Dialog #1', '','yes', 'later');
+      });
+      
+      $('button#clear').on('click', function () {
+          $('.toast').remove();
+      });
+    </script>
+    
+    
+  </body>
+</html>
+
+
+

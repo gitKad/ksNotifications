@@ -1,0 +1,87 @@
+div#toastContainer {
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:320px;
+    max-height:100%;
+    overflow:hidden;
+}
+div.toast {
+    width:304px;
+    height:55px;
+    margin:0px 0px 10px;
+    padding: 5px 8px;
+    position:relative;
+    left:200px;
+}
+div.toast div.text {
+    display:inline-block;
+    position:relative;
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+    width:289px;
+    height:100%;
+}
+div.toast img+div.text {
+    position:absolute;
+    left: 73px;
+    width:216px;
+}
+div.toast img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:inline-block;
+    margin:0px;
+    width:65px;
+    height:65px;
+}
+div#toastContainer div.toast div.close {
+    display:none;
+    position: absolute;
+    top:0px;
+    right:0px;
+    margin:5px 8px;
+    width : 15px;
+    height : 15px;
+    padding:0px;
+    z-index:3000;
+}
+
+div#toastContainer div.toast div.close:before {
+    content:"x";
+    font-style:bold;
+}
+div#toastContainer div.toast:hover div.close {
+    display:block;
+}
+
+div#toastContainer div.toast:last-of-type {
+    margin:0px;
+}
+
+
+
+
+
+div#dialogContainer {
+    z-index:9500;
+    
+    position:absolute;
+    top:0px; right:0px; bottom:0px; left:0px;
+    background-color:black;
+    opacity: 0.5;
+}
+
+div#dialogContainer div#dialog{
+    z-index:9501;
+    position:absolute;
+    top:0px; right:0px; bottom:0px; left:0px;
+    
+    margin:auto;
+    width:100vw;
+    height:25vh;
+    
+    background-color:blue;
+}
